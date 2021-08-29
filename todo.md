@@ -1,1 +1,4 @@
-- make basic objective of blackjack
+- make basic win conditions
+
+- make a dealer
+
