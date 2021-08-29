@@ -1,0 +1,1 @@
+- make basic objective of blackjack
