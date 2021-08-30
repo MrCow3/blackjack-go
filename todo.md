@@ -2,5 +2,4 @@
 
 - make a dealer
 
-- fix if on 21 program breaks
 
