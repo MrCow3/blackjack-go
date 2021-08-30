@@ -14,21 +14,24 @@ var playerAmmount int = 0
 var cards = [9]int{2, 3, 4, 5, 6, 7, 8, 9, 10}
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
 
 	for {
 		if playerAmmount < 21 {
+			reader := bufio.NewReader(os.Stdin)
+			fmt.Println("Hit or stand")
 			fmt.Print("-> ")
 			text, _ := reader.ReadString('\n')
 
 			text = strings.Replace(text, "\n", "", -1)
-			fmt.Println("Would you like to hit")
-			if strings.Compare("yes", text) == 0 {
+			if strings.Compare("hit", text) == 0 {
 				randCard(0)
 				fmt.Println(playerAmmount)
 			}
 		} else if playerAmmount > 21 {
 			fmt.Println("Bust!")
+			os.Exit(0)
+		} else if playerAmmount == 21 {
+			fmt.Println("Blackjack!")
 			os.Exit(0)
 		}
 	}
