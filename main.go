@@ -9,14 +9,14 @@ import (
 	"time"
 )
 
-var playerAmmount int = 0
+var playerAmount int = 0
 
 var cards = [9]int{2, 3, 4, 5, 6, 7, 8, 9, 10}
 
 func main() {
 
 	for {
-		if playerAmmount < 21 {
+		if playerAmount < 21 {
 			reader := bufio.NewReader(os.Stdin)
 			fmt.Println("Hit or stand")
 			fmt.Print("-> ")
@@ -27,10 +27,10 @@ func main() {
 				randCard(0)
 				fmt.Println(playerAmmount)
 			}
-		} else if playerAmmount > 21 {
+		} else if playerAmount > 21 {
 			fmt.Println("Bust!")
 			os.Exit(0)
-		} else if playerAmmount == 21 {
+		} else if playerAmount == 21 {
 			fmt.Println("Blackjack!")
 			os.Exit(0)
 		}
@@ -42,6 +42,6 @@ func randCard(n int) int {
 	in := cards
 	randomIndex := rand.Intn(len(in))
 	pick := in[randomIndex]
-	playerAmmount = playerAmmount + pick
+	playerAmount = playerAmount + pick
 	return 0
 }
