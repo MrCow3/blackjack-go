@@ -25,7 +25,7 @@ func main() {
 			text = strings.Replace(text, "\n", "", -1)
 			if strings.Compare("hit", text) == 0 {
 				randCard(0)
-				fmt.Println(playerAmmount)
+				fmt.Println(playerAmount)
 			}
 		} else if playerAmount > 21 {
 			fmt.Println("Bust!")
