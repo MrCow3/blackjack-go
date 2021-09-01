@@ -41,6 +41,7 @@ func main() {
 					}
 					if y > x {
 						fmt.Println("The dealer wins")
+						os.Exit(0)
 					}
 				}
 			}
