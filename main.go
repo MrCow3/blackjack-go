@@ -12,9 +12,16 @@ import (
 var playerAmount int = 0
 var dealerAmount int = 0
 
+var pick int = 0
+var dealerPick int = 0
+
 var finalCount = []int{playerAmount, dealerAmount}
 
-var cards = [9]int{2, 3, 4, 5, 6, 7, 8, 9, 10}
+var j int = 10
+var q int = 10
+var k int = 10
+
+var cards = [12]int{2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k}
 
 func main() {
 
@@ -29,8 +36,9 @@ func main() {
 
 			text = strings.Replace(text, "\n", "", -1)
 			if strings.Compare("hit", text) == 0 {
-				randCard(0)
+				randCard(12)
 				fmt.Println(playerAmount)
+				fmt.Println(pick)
 			} else if strings.Compare("stand", text) == 0 {
 				if 21 >= finalCount[0] {
 					x := 21 - finalCount[0]
@@ -59,7 +67,7 @@ func randCard(n int) int {
 	rand.Seed(time.Now().UnixNano())
 	in := cards
 	randomIndex := rand.Intn(len(in))
-	pick := in[randomIndex]
+	pick = in[randomIndex]
 	playerAmount = playerAmount + pick
 	finalCount[0] = playerAmount
 	return 0
@@ -69,8 +77,8 @@ func randCardDealer(n int) int {
 	rand.Seed(time.Now().UnixNano())
 	in := cards
 	randomIndex := rand.Intn(len(in))
-	pick := in[randomIndex]
-	dealerAmount = dealerAmount + pick
+	dealerPick = in[randomIndex]
+	dealerAmount = dealerAmount + dealerPick
 	finalCount[1] = dealerAmount
 	return 0
 }
