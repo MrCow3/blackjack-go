@@ -11,7 +11,7 @@ var dealerAmount int = 0
 
 var cards = [9]int{2, 3, 4, 5, 6, 7, 8, 9, 10}
 
-func main() {
+func dealer() {
 	fmt.Println(dealerAmount)
 	for {
 		if dealerAmount < 21 {
