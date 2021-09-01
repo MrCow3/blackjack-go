@@ -12,6 +12,8 @@ import (
 var playerAmount int = 0
 var dealerAmount int = 0
 
+var playerDrawCount int = 0
+
 var pick int = 0
 var dealerPick int = 0
 
@@ -38,7 +40,6 @@ func main() {
 			if strings.Compare("hit", text) == 0 {
 				randCard(12)
 				fmt.Println(playerAmount)
-				fmt.Println(pick)
 			} else if strings.Compare("stand", text) == 0 {
 				if 21 >= finalCount[0] {
 					x := 21 - finalCount[0]
@@ -52,6 +53,9 @@ func main() {
 						os.Exit(0)
 					}
 				}
+			} else if playerDrawCount == 5 {
+				fmt.Println("You got a five card charlie! You Win!")
+				os.Exit(0)
 			}
 		} else if playerAmount > 21 {
 			fmt.Println("Bust!")
@@ -70,6 +74,7 @@ func randCard(n int) int {
 	pick = in[randomIndex]
 	playerAmount = playerAmount + pick
 	finalCount[0] = playerAmount
+	playerDrawCount++
 	return 0
 }
 
