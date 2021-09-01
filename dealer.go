@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 )
 
@@ -17,12 +18,14 @@ func dealer() {
 		if dealerAmount > 21 {
 			fmt.Println("Dealer busted!")
 			fmt.Println(dealerAmount)
-			break
+			fmt.Println("You win")
+			os.Exit(0)
 		}
 
 		if dealerAmount == 21 {
 			fmt.Println("Dealer Blackjack!")
-			break
+			fmt.Println("The dealer wins")
+			os.Exit(0)
 		}
 	}
 }
