@@ -32,10 +32,9 @@ func main() {
 			}
 		} else if playerAmount > 21 {
 			fmt.Println("Bust!")
-			os.Exit(0)
+			break
 		} else if playerAmount == 21 {
 			fmt.Println("Blackjack!")
-			os.Exit(0)
 		}
 	}
 }
