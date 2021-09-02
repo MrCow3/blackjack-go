@@ -22,8 +22,9 @@ var finalCount = []int{playerAmount, dealerAmount}
 var j int = 10
 var q int = 10
 var k int = 10
+var a int = 11
 
-var cards = [12]int{2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k}
+var cards = [13]int{2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k, a}
 
 func main() {
 
@@ -37,8 +38,9 @@ func main() {
 			text, _ := reader.ReadString('\n')
 
 			text = strings.Replace(text, "\n", "", -1)
+			text = strings.TrimSpace(text)
 			if strings.Compare("hit", text) == 0 {
-				randCard(12)
+				randCard(13)
 				fmt.Println(playerAmount)
 			} else if strings.Compare("stand", text) == 0 {
 				if 21 >= finalCount[0] {
