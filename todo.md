@@ -1,1 +1,5 @@
-- set up the ace card
+- make basic win conditions
+
+- make a dealer
+
+
