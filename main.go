@@ -24,7 +24,7 @@ var q int = 10
 var k int = 10
 var a int = 11
 
-var cards = [13]int{2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k, a}
+var cards = [13]int{2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k}
 
 func main() {
 
@@ -87,5 +87,6 @@ func randCardDealer(n int) int {
 	dealerPick = in[randomIndex]
 	dealerAmount = dealerAmount + dealerPick
 	finalCount[1] = dealerAmount
+	println(dealerAmount)
 	return 0
 }

@@ -10,7 +10,7 @@ func dealer() {
 	for {
 		if dealerAmount < 17 {
 			fmt.Println("The dealer hits")
-			randCardDealer(0)
+			randCardDealer(13)
 			time.Sleep(1 * time.Second)
 		} else if dealerAmount >= 17 {
 			fmt.Println("The dealer stands")
