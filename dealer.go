@@ -16,7 +16,8 @@ func dealer() {
 		} else if dealerAmount >= 17 {
 			fmt.Println("The dealer stands")
             break
-		} else if dealerAmount > 21 {
+        }
+		if dealerAmount > 21 {
 			fmt.Println("Dealer busted!")
 			fmt.Println("You win")
 			os.Exit(0)

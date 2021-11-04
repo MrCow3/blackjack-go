@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"fmt" 
+	"fmt"
     "math/rand"
 	"os"
 	"strings"
@@ -47,11 +47,13 @@ func main() {
 					if x < y {
 						fmt.Println("You win")
 						os.Exit(0)
-					}
-					if y < x {
+					} else if y < x {
 						fmt.Println("The dealer wins")
 						os.Exit(0)
-					}
+					} else if y == x {
+                        fmt.Println("Push")
+                        os.Exit(0)
+                    }
 				}
 			} else if playerDrawCount == 5 {
 				fmt.Println("You got a five card charlie! You Win!")
