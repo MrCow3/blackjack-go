@@ -12,9 +12,10 @@ func dealer() {
 			fmt.Println("The dealer hits")
 			randCardDealer(13)
 			time.Sleep(1 * time.Second)
+            fmt.Println(dealerAmount)
 		} else if dealerAmount >= 17 {
 			fmt.Println("The dealer stands")
-			break
+            break
 		} else if dealerAmount > 21 {
 			fmt.Println("Dealer busted!")
 			fmt.Println("You win")

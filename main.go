@@ -2,8 +2,8 @@ package main
 
 import (
 	"bufio"
-	"fmt"
-	"math/rand"
+	"fmt" 
+    "math/rand"
 	"os"
 	"strings"
 	"time"
@@ -27,8 +27,8 @@ var cards = [12]int{2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k}
 
 func main() {
 
-	dealer()
 
+    dealer()
 	for {
 		if playerAmount < 21 {
 			reader := bufio.NewReader(os.Stdin)
@@ -38,17 +38,17 @@ func main() {
 
 			text = strings.Replace(text, "\n", "", -1)
 			if strings.Compare("hit", text) == 0 {
-				randCard(12)
+				randCard(0)
 				fmt.Println(playerAmount)
 			} else if strings.Compare("stand", text) == 0 {
 				if 21 >= finalCount[0] {
 					x := 21 - finalCount[0]
 					y := 21 - finalCount[1]
-					if x > y {
+					if x < y {
 						fmt.Println("You win")
 						os.Exit(0)
 					}
-					if y > x {
+					if y < x {
 						fmt.Println("The dealer wins")
 						os.Exit(0)
 					}
@@ -63,7 +63,7 @@ func main() {
 		} else if playerAmount == 21 {
 			fmt.Println("Blackjack!")
 			break
-		}
+        }
 	}
 }
 
